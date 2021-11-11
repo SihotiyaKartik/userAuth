@@ -19,7 +19,6 @@ app.get('/posts', authenticateToken, (req,res) => {
         
         if(err){res.sendStatus(403)}
         else{
-            console.log(data)
             res.json(posts.filter(post => post.username === data.user.name));
         }
     })
@@ -48,5 +47,5 @@ function authenticateToken(req,res,next){
 }
 
 app.listen(8000, ()=> {
-    console.log("server is  running");
+    console.log("server is running");
 })
