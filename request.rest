@@ -1,11 +1,6 @@
-POST  http://localhost:8000/login
-Content-Type: : application/json
+GET http://localhost:8000/projects
+Content-Type: application/json
 
 {
-    "username":"Kartik"
+"userId":1
 }
-
-###
-
-GET  http://localhost:8000/posts
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7fSwiaWF0IjoxNjM2MDkzNjkyfQ.GxxdwrHu42VOjhSSbjB_i5bBT3jtP5xbzxwT9cr_S3I

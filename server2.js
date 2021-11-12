@@ -1,6 +1,8 @@
 const express = require("express")
 require("dotenv").config();
 const mongoose = require("mongoose")
+const userRoute = require("./routes/users")
+const passport = require("passport")
 const app = express();
 
 mongoose.connect(process.env.mongo_url,{
@@ -11,6 +13,10 @@ mongoose.connect(process.env.mongo_url,{
 
 //middleware
 app.use(express.json())
+app.use(passport.initialize());
+require("./routes/passport")(passport)
+
+app.use("/api",userRoute);
 
 const PORT = process.env.PORT || 8000;
 
